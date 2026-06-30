@@ -11,6 +11,7 @@ import BirthdayWidget from './widgets/BirthdayWidget'
 import EventsWidget from './widgets/EventsWidget'
 import AnnouncementsWidget from './widgets/AnnouncementsWidget'
 import QuickActionsWidget from './widgets/QuickActionsWidget'
+import CopilotWidget from './widgets/CopilotWidget'
 
 const DashboardPage = () => (
   <PageContainer>
@@ -27,6 +28,9 @@ const DashboardPage = () => (
 
     {/* Row 1: Stat cards */}
     <StatsWidget />
+
+    {/* Row 1.5: YU Copilot Assistant */}
+    <CopilotWidget />
 
     {/* Row 2: Announcements (2/3) + Birthdays (1/3) */}
     <section
