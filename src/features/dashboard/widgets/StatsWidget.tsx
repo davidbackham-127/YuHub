@@ -1,5 +1,5 @@
 import DashboardCard from '@/components/common/DashboardCard'
-import { STATS_MOCK } from '../dashboard.mock'
+import { STATS_MOCK } from '@/constants'
 
 /**
  * Statistics Cards widget.

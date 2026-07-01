@@ -10,7 +10,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { ROUTES } from '@/routes/routes'
-import { EVENTS_MOCK } from '../dashboard.mock'
+import { DASHBOARD_EVENTS_MOCK as EVENTS_MOCK } from '@/constants'
 import type { UpcomingEvent } from '../dashboard.types'
 
 const EVENT_TYPE_LABELS: Record<UpcomingEvent['type'], string> = {

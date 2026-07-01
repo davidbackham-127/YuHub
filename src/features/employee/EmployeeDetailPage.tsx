@@ -6,7 +6,7 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { Skeleton } from '@/components/ui/skeleton'
 import { ROUTES } from '@/routes/routes'
-import { EMPLOYEES_MOCK } from './employee.mock'
+import { EMPLOYEES_MOCK } from '@/constants'
 import EmployeeProfileCard from './components/EmployeeProfileCard'
 
 const EmployeeDetailPage = () => {

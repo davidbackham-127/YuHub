@@ -1,26 +1,15 @@
 import { MailIcon, MapPinIcon, PhoneIcon } from 'lucide-react'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
 import { Card, CardContent } from '@/components/ui/card'
+import StatusBadge from '@/components/common/StatusBadge'
 import type { Employee } from '../employee.types'
-
-const STATUS_CONFIG: Record<
-  Employee['status'],
-  { label: string; variant: 'default' | 'secondary' | 'outline' }
-> = {
-  active: { label: 'Đang làm việc', variant: 'default' },
-  on_leave: { label: 'Nghỉ phép', variant: 'outline' },
-  inactive: { label: 'Đã nghỉ', variant: 'secondary' },
-}
 
 interface EmployeeProfileCardProps {
   employee: Employee
 }
 
 const EmployeeProfileCard = ({ employee }: EmployeeProfileCardProps) => {
-  const statusConfig = STATUS_CONFIG[employee.status]
-
   return (
     <Card className="overflow-hidden">
       {/* Cover / Header background */}
@@ -40,9 +29,7 @@ const EmployeeProfileCard = ({ employee }: EmployeeProfileCardProps) => {
                 <h1 className="text-2xl font-bold tracking-tight text-foreground">
                   {employee.fullName}
                 </h1>
-                <Badge variant={statusConfig.variant} className="rounded-full">
-                  {statusConfig.label}
-                </Badge>
+                <StatusBadge status={employee.status} className="rounded-full" />
               </div>
               <p className="text-sm font-medium text-muted-foreground">
                 {employee.position} · {employee.department}

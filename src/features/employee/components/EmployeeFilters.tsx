@@ -1,7 +1,7 @@
-import { SearchIcon, XIcon } from 'lucide-react'
+import { XIcon } from 'lucide-react'
 
 import { Button } from '@/components/ui/button'
-import { Input } from '@/components/ui/input'
+import SearchToolbar from '@/components/common/SearchToolbar'
 import {
   Select,
   SelectContent,
@@ -9,7 +9,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from '@/components/ui/select'
-import { DEPARTMENTS, OFFICES, STATUSES } from '../employee.mock'
+import { EMPLOYEE_DEPARTMENTS, EMPLOYEE_OFFICES, EMPLOYEE_STATUSES } from '@/constants'
 
 interface EmployeeFiltersProps {
   searchTerm: string
@@ -43,19 +43,13 @@ const EmployeeFilters = ({
   return (
     <div className="flex flex-col gap-4 rounded-xl border bg-card p-4 text-card-foreground shadow-sm lg:flex-row lg:items-center">
       {/* Search Input */}
-      <div className="relative flex-1">
-        <SearchIcon
-          className="absolute left-2.5 top-2.5 size-4 text-muted-foreground"
-          aria-hidden="true"
-        />
-        <Input
-          type="search"
-          placeholder="Tìm kiếm theo tên hoặc mã NV..."
-          className="pl-9"
-          value={searchTerm}
-          onChange={(e) => onSearchChange(e.target.value)}
-        />
-      </div>
+      <SearchToolbar
+        className="flex-1"
+        inputClassName="w-full"
+        placeholder="Tìm kiếm theo tên hoặc mã NV..."
+        value={searchTerm}
+        onChange={onSearchChange}
+      />
 
       {/* Select Filters */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:flex lg:shrink-0 lg:items-center">
@@ -65,7 +59,7 @@ const EmployeeFilters = ({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">Tất cả phòng ban</SelectItem>
-            {DEPARTMENTS.map((dept) => (
+            {EMPLOYEE_DEPARTMENTS.map((dept) => (
               <SelectItem key={dept} value={dept}>
                 {dept}
               </SelectItem>
@@ -79,7 +73,7 @@ const EmployeeFilters = ({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">Tất cả văn phòng</SelectItem>
-            {OFFICES.map((office) => (
+            {EMPLOYEE_OFFICES.map((office) => (
               <SelectItem key={office} value={office}>
                 {office}
               </SelectItem>
@@ -93,7 +87,7 @@ const EmployeeFilters = ({
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="all">Tất cả trạng thái</SelectItem>
-            {STATUSES.map((status) => (
+            {EMPLOYEE_STATUSES.map((status) => (
               <SelectItem key={status.value} value={status.value}>
                 {status.label}
               </SelectItem>

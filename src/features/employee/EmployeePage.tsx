@@ -7,7 +7,7 @@ import PageHeader from '@/components/common/PageHeader'
 import { Button } from '@/components/ui/button'
 import EmployeeFilters from './components/EmployeeFilters'
 import EmployeeTable from './components/EmployeeTable'
-import { EMPLOYEES_MOCK } from './employee.mock'
+import { EMPLOYEES_MOCK } from '@/constants'
 
 const EmployeePage = () => {
   const [searchParams, setSearchParams] = useSearchParams()

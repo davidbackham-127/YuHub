@@ -11,7 +11,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { ROUTES } from '@/routes/routes'
-import { BIRTHDAYS_MOCK } from '../dashboard.mock'
+import { DASHBOARD_BIRTHDAYS_MOCK as BIRTHDAYS_MOCK } from '@/constants'
 import type { UpcomingBirthday } from '../dashboard.types'
 
 const getDaysLabel = (days: number): string => {

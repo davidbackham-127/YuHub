@@ -21,7 +21,7 @@ import {
   financeNavItems,
   systemNavItems,
   type NavItem,
-} from './nav-items'
+} from '@/constants'
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
 

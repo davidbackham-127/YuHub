@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { QUICK_ACTIONS_MOCK } from '../dashboard.mock'
+import { QUICK_ACTIONS_MOCK } from '@/constants'
 import type { QuickAction } from '../dashboard.types'
 
 const QuickActionButton = ({ action }: { action: QuickAction }) => (

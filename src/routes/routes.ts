@@ -6,10 +6,13 @@ export const ROUTES = {
     DETAIL: '/nhan-vien/:id',
   },
   BIRTHDAY: '/sinh-nhat',
+  BIRTHDAY_WORKSPACE: '/sinh-nhat/ai',
   EVENTS: {
     ROOT: '/su-kien',
     DETAIL: '/su-kien/:id',
     CREATE: '/su-kien/tao-moi',
+    EDIT: '/su-kien/:id/chinh-sua',
+    AI_WORKSPACE: '/su-kien/:id/ai',
   },
   TOURNAMENT: '/giai-dau',
   COMMUNICATION: '/truyen-thong',

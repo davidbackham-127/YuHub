@@ -1,9 +1,6 @@
-import { BellIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Badge } from '@/components/ui/badge'
-import { Button } from '@/components/ui/button'
 import {
   Breadcrumb,
   BreadcrumbItem,
@@ -25,10 +22,7 @@ import { Separator } from '@/components/ui/separator'
 import { useBreadcrumbs } from '@/hooks/use-breadcrumbs'
 import SearchDialog from './SearchDialog'
 import ThemeToggle from './ThemeToggle'
-
-// ─── Notification count (replace with real data later) ───────────────────────
-const NOTIFICATION_COUNT = 3
-
+import { NotificationCenter } from './NotificationCenter'
 // ─── AppBreadcrumb ────────────────────────────────────────────────────────────
 
 const AppBreadcrumb = () => {
@@ -63,25 +57,6 @@ const AppBreadcrumb = () => {
     </Breadcrumb>
   )
 }
-
-// ─── NotificationButton ───────────────────────────────────────────────────────
-
-const NotificationButton = () => (
-  <div className="relative">
-    <Button variant="ghost" size="icon-sm" aria-label="Thông báo">
-      <BellIcon className="size-4" />
-    </Button>
-    {NOTIFICATION_COUNT > 0 && (
-      <Badge
-        variant="destructive"
-        aria-label={`${NOTIFICATION_COUNT} thông báo chưa đọc`}
-        className="absolute -top-1 -right-1 flex size-4 items-center justify-center rounded-full p-0 text-[10px] leading-none"
-      >
-        {NOTIFICATION_COUNT}
-      </Badge>
-    )}
-  </div>
-)
 
 // ─── UserMenu ─────────────────────────────────────────────────────────────────
 
@@ -131,7 +106,7 @@ const AppHeader = () => (
     {/* Right: actions */}
     <div className="flex shrink-0 items-center gap-1">
       <SearchDialog />
-      <NotificationButton />
+      <NotificationCenter />
       <ThemeToggle />
       <Separator orientation="vertical" className="mx-1 h-4" />
       <UserMenu />

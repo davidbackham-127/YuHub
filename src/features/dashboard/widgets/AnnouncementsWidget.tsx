@@ -7,7 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { ANNOUNCEMENTS_MOCK } from '../dashboard.mock'
+import { ANNOUNCEMENTS_MOCK } from '@/constants'
 import type { Announcement } from '../dashboard.types'
 
 const CATEGORY_CONFIG: Record<
